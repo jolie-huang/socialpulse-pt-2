@@ -4,14 +4,16 @@ const uploadVid = async (media) => {
   try {
     const form = new FormData();
     form.append("file", media);
-    form.append("upload_preset", process.env.CLOUDINARY_UPLOAD_PRESET);
-    form.append("cloud_name", process.env.CLOUDINARY_CLOUD_NAME);
+    form.append("upload_preset", "socialpulse");
+    form.append("cloud_name", "dgnigx1ez");
 
     // Additional parameters for video uploads
     form.append("resource_type", "video");
 
-
-    const res = await axios.post(process.env.CLOUDINARY_URL_VID, form);
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/dgnigx1ez/video/upload",
+      form
+    );
 
     return res.data.url;
   } catch (error) {
@@ -20,4 +22,4 @@ const uploadVid = async (media) => {
   }
 };
 
-export default uploadVid; 
+export default uploadVid;
