@@ -164,7 +164,7 @@ router.get("/:postId", authMiddleware, async (req, res) => {
 
     // Update post type to "Trendy" based on conditions
     const shouldUpdateType =
-      post.reads.length > 01 && post.likesCount - post.dislikesCount > 3;
+      post.reads.length > 10 && post.likesCount - post.dislikesCount > 3;
 
     if (shouldUpdateType && post.kind !== "Trendy") {
       await PostModel.findByIdAndUpdate(post._id, { kind: "Trendy" });
