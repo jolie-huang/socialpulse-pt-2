@@ -28,6 +28,7 @@ function LikeNotification({ notification }) {
         </Feed.Content>
       </Feed.Event>
       <br />
+      <Divider />
     </>
   );
 }

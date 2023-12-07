@@ -28,6 +28,7 @@ function DislikeNotification({ notification }) {
         </Feed.Content>
       </Feed.Event>
       <br />
+      <Divider />
     </>
   );
 }

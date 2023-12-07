@@ -202,7 +202,7 @@ function Trendy({ user, postsData, errorLoading }) {
         <Card.Group>
           {/* displaying the first trendy user that this user does not follow */}
           {isVisible.card1 && (
-            <Card style={{ width: "250px" }}>
+            <Card style={{ width: "19rem" }}>
               <Card.Content>
                 <Image floated="right" size="mini" src={profilePicUrl} />
                 <Card.Header>{name}</Card.Header>
@@ -234,7 +234,7 @@ function Trendy({ user, postsData, errorLoading }) {
           )}
           {/* displaying the second trendy user that this user does not follow */}
           {isVisible.card2 && (
-            <Card style={{ width: "250px" }}>
+            <Card style={{ width: "19rem" }}>
               <Card.Content>
                 <Image floated="right" size="mini" src={profilePicUrl1} />
                 <Card.Header>{name1}</Card.Header>
@@ -267,7 +267,7 @@ function Trendy({ user, postsData, errorLoading }) {
 
           {/* displaying the third trendy user that this user does not follow */}
           {isVisible.card3 && (
-            <Card style={{ width: "250px" }}>
+            <Card style={{ width: "19rem" }}>
               <Card.Content>
                 <Image floated="right" size="mini" src={profilePicUrl2} />
                 <Card.Header>{name2}</Card.Header>
