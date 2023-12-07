@@ -34,7 +34,7 @@ export const submitNewPost = async (
   } catch (error) {
     const errorMsg = catchErrors(error);
     setError(errorMsg);
-    // window.location.href = "/login";
+    // window.location.href = "/popular";
   }
 };
 

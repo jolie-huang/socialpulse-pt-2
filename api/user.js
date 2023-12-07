@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware");
@@ -139,10 +140,54 @@ router.delete("/:userId", authMiddleware, async (req, res) => {
     }
 
     await ChatModel.deleteMany({ user: userId });
+    await ChatModel.updateMany(
+      {},
+      { $pull: { chats: { messagesWith: mongoose.Types.ObjectId(userId) } } }
+    );
+
     await FollowerModel.deleteMany({ user: userId });
+    await FollowerModel.updateMany(
+      {},
+      { $pull: { followers: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+    await FollowerModel.updateMany(
+      {},
+      { $pull: { following: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+
     await NotificationModel.deleteMany({ user: userId });
+    await NotificationModel.updateMany(
+      {},
+      { $pull: { notifications: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+
     await PostModel.deleteMany({ user: userId });
+    await PostModel.updateMany(
+      {},
+      { $pull: { likes: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+    await PostModel.updateMany(
+      {},
+      { $pull: { dislikes: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+    await PostModel.updateMany(
+      {},
+      { $pull: { comments: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+    await PostModel.updateMany(
+      {},
+      { $pull: { reports: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+    await PostModel.updateMany(
+      {},
+      { $pull: { reads: { user: mongoose.Types.ObjectId(userId) } } }
+    );
+
     await ProfileModel.deleteMany({ user: userId });
+    await ProfileModel.updateMany(
+      {},
+      { $pull: { reports: { user: mongoose.Types.ObjectId(userId) } } }
+    );
 
     await user.remove();
     return res.status(200).send("User deleted Successfully!");

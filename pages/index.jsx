@@ -125,7 +125,7 @@ function Index({ user, postsData, errorLoading }) {
             )}
           </>
         ) : (
-          typeof window !== "undefined" && (window.location.href = "/login")
+          typeof window !== "undefined" && (window.location.href = "/popular")
         )}
       </Segment>
     </>

@@ -326,7 +326,7 @@ function ProfileHeader({
                   if (user.role === "Super") {
                     window.location.href = "/";
                   } else {
-                    window.location.href = "/login";
+                    window.location.href = "/popular";
                   }
                 }}
               />

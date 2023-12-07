@@ -32,7 +32,7 @@ function Messages({ chatsData, user }) {
 
   useEffect(() => {
     if (!user) {
-      window.location.href = "/login";
+      window.location.href = "/popular";
     }
 
     if (!socket.current) {

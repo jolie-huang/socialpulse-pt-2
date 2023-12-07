@@ -220,9 +220,9 @@ function SideMenu({
         <br />
         <List.Item onClick={() => logoutUser(email)}>
           {dark ? (
-            <Icon name="logout" size="large" style={{ color: "#23272f" }} />
+            <Icon name="log out" size="large" style={{ color: "#23272f" }} />
           ) : (
-            <Icon name="logout" size="large" style={{ color: "#ececec" }} />
+            <Icon name="log out" size="large" style={{ color: "#ececec" }} />
           )}
           <List.Content>
             {pc && dark ? (

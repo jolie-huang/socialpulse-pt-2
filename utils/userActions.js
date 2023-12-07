@@ -62,10 +62,10 @@ export const withdrawMoney = async (
   }
 };
 
-export const deleteUser = async (userId, setShowUserToastr) => {
+export const deleteUser = async (userId, setShowToastr) => {
   try {
     await Axios.delete(`/${userId}`);
-    setShowUserToastr(true);
+    setShowToastr(true);
   } catch (error) {
     alert(catchErrors(error));
   }
