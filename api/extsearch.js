@@ -18,8 +18,15 @@ router.get(
           // Use the found user's _id to search for posts
           searchCriteria["user"] = user;
         } else {
-          // If user not found, return an empty array
-          return res.status(200).json([]);
+          const users = await UserModel.find({ username: { $gte: username } });
+
+          if (users.length > 0) {
+            // Use the found users' _id to search for posts
+            searchCriteria["user"] = { $in: users.map((user) => user._id) };
+          } else {
+            // If users not found, return an empty array
+            return res.status(200).json([]);
+          }
         }
       }
 

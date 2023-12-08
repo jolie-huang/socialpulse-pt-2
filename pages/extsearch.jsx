@@ -85,7 +85,11 @@ function ExtSearch(user) {
           username ? username.toLowerCase() : "null"
         }/${likesCount ? likesCount : "null"}/${
           dislikesCount ? dislikesCount : "null"
-        }/${keywords ? keywords : "null"}`,
+        }/${
+          keywords
+            ? keywords.charAt(0).toUpperCase() + keywords.slice(1)
+            : "null"
+        }`,
         { headers: { Authorization: cookie.get("token") } }
       );
 
