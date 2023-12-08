@@ -8,11 +8,11 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![GitHub][github-shield]][github-url]
 
-# [SocialPulse](https://socialpulse.herokuapp.com/) | Social Media Platform
+# [SocialPulse](https://socialpulse-9a2adcafece8.herokuapp.com/) | Social Media Platform
 
 <br />
 <div align="center">
-  <a href="https://socialpulse.herokuapp.com/">
+  <a href="https://socialpulse-9a2adcafece8.herokuapp.com/">
     <img src="logo.png" alt="Logo" width="200" height="200">
   </a>
 
@@ -24,7 +24,7 @@
     <a href="https://github.com/GeorgiosIoannouCoder/socialpulse"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://socialpulse.herokuapp.com/">View Web Application</a>
+    <a href="https://socialpulse-9a2adcafece8.herokuapp.com/">View Web Application</a>
     ·
     <a href="https://github.com/GeorgiosIoannouCoder/socialpulse/issues">Report Bug</a>
     ·
@@ -59,7 +59,7 @@
 
 ## About The Project
 
-<a href="https://socialpulse.herokuapp.com/">
+<a href="https://socialpulse-9a2adcafece8.herokuapp.com/">
     <img src="logo.png" alt="Logo" width="200" height="200">
   </a>
 
@@ -194,11 +194,14 @@
    ***2. Please put your own jwtSecret. It can be anything you like.***
 
    ***3. Please put your own sendGrid_api. You can obtain one by creating an account [here](https://sendgrid.com/en-us).***
+
+   ***4. Please put your own your_cludinary_cloud_name. You can obtain them by creating an account [here](https://cloudinary.com/).***
    
    ```js
     MONGO_URI=your_online_MONGO_URI
     jwtSecret=here_have_a_random_secret_code
     sendGrid_api=api_key_get_it_from_sendgrid
+    CLOUDINARY_CLOUD_NAME=your_cludinary_cloud_name
     ```
 
 6. Create a next.config.js file inside the socialpulse directory
@@ -227,18 +230,26 @@
 
 ## Usage
 
-To try the SocialPulse application click on this [link](https://socialpulse.herokuapp.com/)!
+To try the SocialPulse application click on this [link](https://socialpulse-9a2adcafece8.herokuapp.com/)!
 
 You can use the following two accounts to test the application in case that you do not want to register:
 
-1. User
-    - Email: stevejobs@apple.com
-    - Password: stevejobs123
+1. Super User
+    - Email: SuperUser1@gmail.com
+    - Password: SuperUser1!
 
-2. User
-    - Email: billgates@microsoft.com
-    - Password: billgates123
+2. Ordinary User
+    - Email: OrdinaryUser1@gmail.com
+    - Password: OrdinaryUser1!
 
+3. Corporate User
+    - Email: CorporateUser1@gmail.com
+    - Password: CorporateUser1!
+
+3. Trendy User
+    - Email: TrendyUser1@gmail.com
+    - Password: TrendyUser1!
+  
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Contributing
