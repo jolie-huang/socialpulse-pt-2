@@ -41,7 +41,17 @@ router.get(
         createdAt: -1,
       });
 
-      return res.status(200).json(results);
+      let resultsIds = results.map((result) => result.user);
+
+      let resultsUsers = [];
+
+      for (let resultsId of resultsIds) {
+        let userId = String(resultsId);
+        const user = await UserModel.findById(userId);
+        resultsUsers.push(user);
+      }
+
+      return res.status(200).json({ results, resultsUsers });
     } catch (error) {
       console.error(error);
       return res.status(500).send("Server error!");

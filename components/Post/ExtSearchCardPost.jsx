@@ -33,13 +33,34 @@ import ReportPostList from "./ReportPostList";
 import ReadsList from "./ReadsList";
 import ImageModal from "./ImageModal";
 import NoImageModal from "./NoImageModal";
+import cookie from "js-cookie";
 
-function CardPost({ post, user, setPosts, setShowToastr }) {
+function ExtSearchCardPost({ post, user, setPosts, setShowToastr }) {
   const [likes, setLikes] = useState(post.likes);
   const [dislikes, setDisLikes] = useState(post.dislikes);
   const [reads, setReads] = useState(post.reads);
   const hasRead = post.reads.some((read) => read.user.toString() === user._id);
   const [isRead, setIsRead] = useState(hasRead);
+
+  const handleNewYork = async () => {
+    try {
+      const res = await axios.get(`${baseUrl}/api/auth/${post.user}`, {
+        headers: { Authorization: cookie.get("token") },
+      });
+    } catch (error) {
+      alert("Error fetching Posts!");
+    }
+  };
+
+  async () => {
+    try {
+      const res = await axios.get(`${baseUrl}/api/auth/${post.user}`, {
+        headers: { Authorization: cookie.get("token") },
+      });
+    } catch (error) {
+      alert("Error fetching Posts!");
+    }
+  };
 
   const isLiked =
     likes.length > 0 &&
@@ -559,4 +580,4 @@ function CardPost({ post, user, setPosts, setShowToastr }) {
   );
 }
 
-export default CardPost;
+export default ExtSearchCardPost;

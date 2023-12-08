@@ -10,14 +10,15 @@ import {
 } from "../components/Layout/PlaceHolderGroup";
 import io from "socket.io-client";
 import ExtSearchCardPost from "../components/Post/ExtSearchCardPost";
-
 import { PostDeleteToastr } from "../components/Layout/Toastr";
+import CardPost from "../components/Post/CardPost";
 
 function ExtSearch(user) {
   const [username, setUsername] = useState("");
   const [keywords, setKeywords] = useState("");
   const [dislikesCount, setDislikesCount] = useState("");
   const [likesCount, setLikesCount] = useState("");
+  const [resultsUsers, setResultsUsers] = useState([]);
   const [results, setResults] = useState([]);
   const [hasMore, setHasMore] = useState(true);
 
@@ -35,7 +36,9 @@ function ExtSearch(user) {
         params: { pageNumber },
       });
 
-      if (res.data.length === 0) setHasMore(false);
+      if (res.data.length === 0) {
+        setHasMore(false);
+      }
 
       setPosts((prev) => [...prev, ...res.data]);
       setPageNumber((prev) => prev + 1);
@@ -78,15 +81,17 @@ function ExtSearch(user) {
 
     try {
       const res = await axios.get(
-        `${baseUrl}/api/extsearch/${username ? username : "null"}/${
-          likesCount ? likesCount : "null"
-        }/${dislikesCount ? dislikesCount : "null"}/${
-          keywords ? keywords : "null"
-        }`,
+        `${baseUrl}/api/extsearch/${
+          username ? username.toLowerCase() : "null"
+        }/${likesCount ? likesCount : "null"}/${
+          dislikesCount ? dislikesCount : "null"
+        }/${keywords ? keywords : "null"}`,
         { headers: { Authorization: cookie.get("token") } }
       );
 
-      setResults(res.data); // Set the results in state
+      setResultsUsers(res.data.resultsUsers);
+
+      setResults(res.data.results); // Set the results in state.
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -110,7 +115,11 @@ function ExtSearch(user) {
               placeholder="Enter Username"
             />
             <Form.Input
-              label={<label style={{ color: "white" }}>Keyword</label>}
+              label={
+                <label style={{ color: "white" }}>
+                  Keyword (without the @)
+                </label>
+              }
               onChange={(e) => setKeywords(e.target.value)}
               placeholder="Enter Keyword"
               value={keywords}
@@ -153,25 +162,37 @@ function ExtSearch(user) {
           user={user}
         />
       )}
-
-      <Segment color="blue">
-        <InfiniteScroll
-          hasMore={hasMore}
-          next={fetchDataOnScroll}
-          endMessage={<EndMessage />}
-          dataLength={results.length}
-        >
-          {results.map((post) => (
-            <ExtSearchCardPost
-              key={post._id}
-              post={post}
-              user={user.user}
-              setPosts={setPosts}
-              setShowToastr={setShowToastr}
-            />
-          ))}
-        </InfiniteScroll>
-      </Segment>
+      {results && resultsUsers && (
+        <Segment color="blue">
+          <InfiniteScroll
+            hasMore={hasMore}
+            next={fetchDataOnScroll}
+            endMessage={<EndMessage />}
+            dataLength={results.length}
+          >
+            {/* {results.map((post) => (
+              <CardPost
+                key={post._id}
+                post={post}
+                user={user.user}
+                setPosts={setPosts}
+                setShowToastr={setShowToastr}
+              />
+            ))} */}
+            {results.map((post) =>
+              resultsUsers.map((user) => (
+                <ExtSearchCardPost
+                  key={post._id}
+                  post={post}
+                  user={user}
+                  setPosts={setPosts}
+                  setShowToastr={setShowToastr}
+                />
+              ))
+            )}
+          </InfiniteScroll>
+        </Segment>
+      )}
     </>
   );
 }
