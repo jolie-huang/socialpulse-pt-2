@@ -214,6 +214,7 @@
     module.exports = {
       env: {
         CLOUDINARY_URL: "https://api.cloudinary.com/v1_1/your_cludinary_cloud_name/image/upload",
+        CLOUDINARY_URL_VID: "https://api.cloudinary.com/v1_1/your_cludinary_cloud_name/video/upload",
         CLOUDINARY_CLOUD_NAME: "your_cludinary_cloud_name",
         CLOUDINARY_UPLOAD_PRESET: "your_upload_preset",
       },
