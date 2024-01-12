@@ -158,6 +158,7 @@ function PopularCardPost({ post, setPosts }) {
               {post.text}
             </Card.Description>
 
+            {/* Read */}
             <Button
               as="div"
               labelPosition="right"
@@ -229,6 +230,7 @@ function PopularCardPost({ post, setPosts }) {
                 </Label>
               </Button>
 
+              {/* Comment */}
               <Button as="div" labelPosition="right">
                 <Link href={`/login`}>
                   <Button color="violet">
@@ -246,6 +248,7 @@ function PopularCardPost({ post, setPosts }) {
                 </Label>
               </Button>
 
+              {/* Report */}
               {reports.length > 0 && post.user.role !== "Super" && (
                 <Modal
                   closeIcon
@@ -366,8 +369,7 @@ function PopularCardPost({ post, setPosts }) {
                   </Modal.Content>
                 </Modal>
               )}
-              {/* clickable tip button */}
-
+              {/* Tip */}
               <Button as="div" labelPosition="right">
                 <Link href={`/login`}>
                   <Button color="green">
@@ -381,6 +383,7 @@ function PopularCardPost({ post, setPosts }) {
               </Button>
             </div>
 
+            {/* Comment */}
             {comments.length > 0 &&
               comments.map(
                 (comment, i) =>
