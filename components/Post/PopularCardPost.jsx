@@ -174,18 +174,11 @@ function PopularCardPost({ post, setPosts }) {
                 />
               </Button>
               <Label as="a" color="black">
-                <ReadsList
-                  postId={post._id}
-                  trigger={
-                    reads.length > 0 && (
-                      <span className="spanReadsList">
-                        {`${reads.length} ${
-                          reads.length === 1 ? "read" : "reads"
-                        }`}
-                      </span>
-                    )
-                  }
-                />
+                {reads.length > 0 && (
+                  <span className="spanReadsList">
+                    {`${reads.length} ${reads.length === 1 ? "read" : "reads"}`}
+                  </span>
+                )}
               </Label>
             </Button>
           </Card.Content>
