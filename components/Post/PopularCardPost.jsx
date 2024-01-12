@@ -158,7 +158,7 @@ function PopularCardPost({ post, setPosts }) {
               {post.text}
             </Card.Description>
 
-            {/* Read */}
+            {/* Read Button */}
             <Button
               as="div"
               labelPosition="right"
@@ -186,7 +186,7 @@ function PopularCardPost({ post, setPosts }) {
 
           <Card.Content extra>
             <div>
-              {/* Like */}
+              {/* Like Button */}
               <Button as="div" labelPosition="right">
                 <Link href={`/login`}>
                   <Button color="blue">
@@ -208,7 +208,7 @@ function PopularCardPost({ post, setPosts }) {
                 </Label>
               </Button>
 
-              {/* Dislike */}
+              {/* Dislike Button */}
               <Button as="div" labelPosition="right">
                 <Link href={`/login`}>
                   <Button color="brown">
@@ -230,7 +230,7 @@ function PopularCardPost({ post, setPosts }) {
                 </Label>
               </Button>
 
-              {/* Comment */}
+              {/* Comment Button */}
               <Button as="div" labelPosition="right">
                 <Link href={`/login`}>
                   <Button color="violet">
@@ -248,7 +248,7 @@ function PopularCardPost({ post, setPosts }) {
                 </Label>
               </Button>
 
-              {/* Report */}
+              {/* Report Button */}
               {reports.length > 0 && post.user.role !== "Super" && (
                 <Modal
                   closeIcon
@@ -369,7 +369,7 @@ function PopularCardPost({ post, setPosts }) {
                   </Modal.Content>
                 </Modal>
               )}
-              {/* Tip */}
+              {/* Tip Button */}
               <Button as="div" labelPosition="right">
                 <Link href={`/login`}>
                   <Button color="green">
@@ -383,7 +383,7 @@ function PopularCardPost({ post, setPosts }) {
               </Button>
             </div>
 
-            {/* Comment */}
+            {/* Comment Button */}
             {comments.length > 0 &&
               comments.map(
                 (comment, i) =>
