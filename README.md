@@ -69,6 +69,17 @@
 
 ### Key Features
 
+1. **Five type of users:**
+   1. ***[Super User (SU)](https://github.com/GeorgiosIoannouCoder/socialpulse#usage)***
+      1. **Super users on our platform are capable of adding/removing warnings on the user's profile page along with deleting users and posts.**
+   2. ***[Corporate User (CU)](https://github.com/GeorgiosIoannouCoder/socialpulse#usage)***
+      1. **Corporate users can distinguish whether their post is a regular, ad, or job posting.**
+   3. ***[Trendy User (TU)](https://github.com/GeorgiosIoannouCoder/socialpulse#usage)***
+      1. **Users are automatically promoted to trendy users if they have the specified requirements: a) subscribed by >10 users, and b) received >$100 tips or #likes-#dislikes >10, and c) author of at least 2 trendy messages**
+   4. ***[Ordinary User (OU)](https://github.com/GeorgiosIoannouCoder/socialpulse#usage)***
+      1. **Ordinary users can post/delete, comment, tip, like/dislike, report, and follow users.**
+   5. ***[Surfer](https://github.com/GeorgiosIoannouCoder/socialpulse#usage)***
+      1. **Surfers can view the “Popular” Page where they can view the top 3 most liked messages and report these posts.**
 1. **Sign-up page with a real-time validation and feedback form.**
 2. **Fully customizable profile where people can also upload pictures and edit them in the web application.**
 3. **Reset password functionality.**
@@ -76,8 +87,8 @@
 5. **Follow and unfollow users.**
 6. **Add and delete posts and comments.**
 7. **Enable location with each post.**
-8. **Allow users to like and react with emojis on each post and comment.**
-9. **Receive notifications for each new activity that is related to each user.**
+8.  **Allow users to like and react with emojis on each post and comment.**
+9.  **Receive notifications for each new activity that is related to each user.**
 10. **Infinite scroll to fetch more data as you keep scrolling down the news feed.**
 11. **Real-time chat without the need to reload the web page or download any external software such as a messenger.**
 12. **Display the status of each user such as green for online status, grey for away status, and red for offline status.**
@@ -93,6 +104,13 @@
 22. **A warnings tab within the navigation bar to view the number of warnings, reports, and disputes that must be attended to.**
 23. **Comprehensive functionality for disputing reports and warnings.**
 24. **Fisher-Yates Algorithm to recommend possible users to connect with.**
+25. **Blurring the post until they click the read button.**
+26. **The like/dislike/report post/read button shows list of users who did that action.**
+27. **CU is allowed to post ads and job applications that other users can click and apply, CU will pay the system (SU) by $0.1 for each click and application.**
+28. **ll users can search for messages based on author, keywords, with/without images and or videos, #of likes/dislikes.**
+29. **Any user receiving warning can dispute with the SU: if winning the dispute the warning is removed: if the warning is initialized by another user, the user who reported complained will be warned once; if the warning is by a surfer, the complained user is rewarded by 3 likes from the SU. Any CU/OU with 3 outstanding warnings will be given the choice of paying out the fine to remove the complaints or removed from the system. Any TU with 3 outstanding warnings will be demoted to OU with no warnings.**
+30. **TU/OU can post messages with <=20 words (an image is equivalent to 10 words, while a video is equivalent to 15 words) for free, any message >20 words will be billed by the system automatically with the amount (# - 20)*$0. 1; a CU's message is billed #*$1 without free ones. If the user does not have enough money in the account, a warning is issued and when the user logging will be automatically directed to the payment page.**
+
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
@@ -251,6 +269,13 @@ You can use the following two accounts to test the application in case that you 
     - Email: TrendyUser1@gmail.com
     - Password: TrendyUser1!
   
+<p align="right"><a href="#readme-top">Back to top</a></p>
+
+## Reports
+
+1. **[Report Phase 1](https://github.com/GeorgiosIoannouCoder/socialpulse/blob/main/reports/Phase1.pdf). This report illustrates the purpose, scope, overall description, and use-case of the project.**
+2. **[Report Phase 2](https://github.com/GeorgiosIoannouCoder/socialpulse/blob/main/reports/Phase2.pdf). This report is meant to provide the data structure and logic to carry out the functionalities dictated by the specification. It includes a collaboration class diagram, all use case scenarios (normal and exceptional scenarios), petri-net, er-diagram, and GUI screens.**
+
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Contributing
