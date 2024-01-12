@@ -1,3 +1,5 @@
+***NOTE: [SocialPulse](https://socialpulse-9a2adcafece8.herokuapp.com/) is  an extension of my [MergeMe](https://mergeme.herokuapp.com/).***
+
 <a name="readme-top"></a>
 
 [![Contributors][contributors-shield]][contributors-url]
