@@ -10,6 +10,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 [![GitHub][github-shield]][github-url]
 
 # [SocialPulse](https://socialpulse-9a2adcafece8.herokuapp.com/) | Social Media Platform
